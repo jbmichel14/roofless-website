@@ -1,0 +1,275 @@
+:root{
+    --bg-color: rgb(250, 250, 250);
+    --color-1: rgb(255, 213, 234); /* 60% */
+    --color-2: rgb(210, 231, 243); /* 30% */
+    --color-2-accent: rgb(83, 184, 243);
+    --color-3: #000; /* 10% */
+
+    --font-family-1: "Cinzel", Helvetica, sans-serif;
+
+    --shadow-1:
+    -0.2px -0.2px 5.3px rgba(0, 0, 0, 0.202),
+    4px 4px 17.9px rgba(0, 0, 0, 0.298),
+    40px 40px 80px rgba(0, 0, 0, 0.5)
+  ;
+  scroll-behavior: smooth;
+
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-family-1);
+}
+
+#navbar {
+    padding: 3em 1em 1em 1em;
+    transition: 0.2s;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#navbar .container {
+    display: flex;
+    flex-direction: horizontal;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3px;
+}
+
+#navbar #logo {
+    width: 150px;
+    transition: 0.2s;
+}
+
+
+
+#navbar a {
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px; 
+    font-weight: 300;
+}
+
+#section-1 {
+    /* background-color: #3498db; */
+    position: relative;
+    margin-top: 250px;
+    padding: 0 4em 0;
+    max-width: 100vw;
+    min-height: 50vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#product-description {
+    background-color: var(--color-1);
+    width: 500px;
+    padding: 3em;
+    max-width: 100vw;
+    flex-grow: 0;
+    text-align: end;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border-radius: 87% 13% 88% 12% / 53% 40% 60% 47%;
+    box-shadow:
+        -0.2px -0.2px 5.3px var(--color-1),
+        4px 4px 17.9px var(--color-1),
+        40px 40px 80px var(--color-1);
+    z-index: 10;
+    color: var(--bg-color);
+
+}
+
+#product-description h1 {
+    display: block;
+    font-weight: 700;
+    font-size: 60px;
+    margin: 0;
+}
+
+#product-description p {
+    display: block;
+    font-weight: 300;
+    font-size: 25px;
+}
+
+#v0 {
+    width: 500px;
+    max-width: 100vw;
+    flex-grow: 1;
+}
+
+#section-2 {
+    position: relative;
+    min-height: 75vh;
+    padding-top: 100px;
+}
+
+#gif-container {
+    /* background-color: aqua; */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.gif-class {
+    height: 400px;
+}
+
+.gif-class-static {
+    height: 400px;
+    position: absolute;
+    box-shadow:
+    0px -0.2px 5.3px var(--color-1),
+    0px 4.2px 17.9px var(--color-1),
+    0px 42px 80px var(--color-1);
+    transition: 0.3s ease;
+}
+
+.gif-class-static:hover {
+    opacity:0;
+}
+
+#section-3 {
+    position: relative;
+    height: 100vh;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px;
+}
+
+.form-container {
+    background-color: var(--color-2);
+    height: 500px;
+    width: 700px;
+    padding: 6em;
+    max-width: 100vw;
+    border-radius: 43% 57% 50% 50% / 39% 76% 24% 61% ;
+    box-shadow:
+        -0.2px -0.2px 5.3px var(--color-2),
+        4px 4px 17.9px var(--color-2),
+        40px 40px 80px var(--color-2);
+}
+
+.form-container .form-text {
+    font-size: 35px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.form-container form {
+    padding: 30px;
+    margin: 32px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.launchlist-form .input-container {
+    width: 100%;
+    margin: 20px 20px;
+    position: relative;
+}
+
+.input-container input {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 17px;
+    border-bottom: 2px solid rgba(0,0,0,0.12);
+}
+
+input:focus {
+    outline: none;
+}
+
+.launchlist-form input{
+    background-color: var(--color-2);
+    font-family: var(--font-family-1); 
+}
+
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+    transform: translateY(-20px);
+    color: var(--color-2-accent);
+    font-size: 14px;
+}
+
+.input-container label {
+    position: absolute;
+    bottom: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.input-container .underline {
+    position: absolute;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+}
+
+.input-container .underline:before,
+.input-container .underline:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color:  var(--color-2-accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+}
+
+.input-container input:focus ~ .underline:before, .underline:after,
+.input-container input:not(:placeholder-shown) ~ .underline:before, .underline:after {
+    transform: scaleX(1);
+}
+
+.submit-button {
+    text-emphasis-color: var(--color-2-accent);
+    height: 50%;
+    width: 50%;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+}
+
+.submit-button:disabled {
+    background-color: var(--color-2-accent);
+    opacity: 0.5;
+}
+
+.submit-button:enabled {
+    background-color: var(--color-2-accent);
+    box-shadow:
+        0px -0.2px 5.3px var(--color-2-accent),
+        0px 4.2px 17.9px var(--color-2-accent),
+        0px 42px 80px var(--color-2-accent);
+}
+
+.submit-button:enabled:hover {
+    cursor: pointer;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}

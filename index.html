@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">   
+    <script src="https://getlaunchlist.com/js/widget-diy.js" defer></script>
+</head>
+<body>
+    <div id="navbar">
+        <div class="container">
+            <img id="logo" src="logo.png">
+            <a href=#section-3>Shop now</a>
+        </div>
+    </div>
+
+    <section id="section-1">
+        <div id="product-description">
+            <h1 class="title">K4MERA</h1>
+            <p>At Roofless Inc., we worked on making this camera digital. No film, no photoshop, just magic.</p>
+        </div>
+        <video id="v0" tabindex="0", autobuffer preload>
+            <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src= "k4mspin.mp4"></source>
+        </video>
+    </section>
+    <section id="section-2">
+
+        <div id="gif-container">
+            <div>
+                <img class="gif-class-static" src="img0.png">
+                <img class="gif-class" src="img0.gif">
+            </div>
+            <div>
+                <img class="gif-class-static" src="img1.png">
+                <img class="gif-class" src="img1.gif">
+            </div>
+            <div>
+                <img class="gif-class-static" src="img2.png">
+                <img class="gif-class" src="img2.gif">
+            </div>
+
+            
+        </div>
+
+
+    </section>
+
+    <section id="section-3">
+
+        
+
+        <div class="form-container">
+            <div class="form-text">We are not live yet, still a work in progress. Enter your info below if you want to be the first to be notified when we're there!</div>
+            <form class="launchlist-form" action="https://getlaunchlist.com/s/myIZjJ" method="POST">
+                
+                <div class="input-container">
+                    <input id="launchlist-email" name="email" type="email" placeholder=" " required>
+                    <div class="underline"></div>
+                    <label>Email Address</label>
+                </div>
+                <div class="input-container">
+                    <input id="launchlist-other-info" name="name" type="text" placeholder=" ">
+                    <div class="underline"></div>
+                    <label>Anything else you want to add (instagram, twitter, ...)</label>
+                </div>
+                
+                <div class="input-container">
+                    <input id="launchlist-submit" class="submit-button" type="submit" value="Sign Up"></input>
+                </div>
+            </form>
+        </div>
+
+    </section>
+
+    <footer> <small>&copy; Copyright 2023, Roofless</small> </footer> 
+
+    
+
+    <script>
+
+        
+        // Gifs animate on hover
+
+        document.querySelectorAll('img.gif-class').forEach(element => {
+
+            element.addEventListener('mouseenter', event => {
+                element.src = element.src.replace(/\.png$/, '.gif')
+            })
+
+            element.addEventListener('mouseleave', event => {
+                element.src = element.src.replace(/\.gif$/, '.png')
+            })
+        })
+
+
+        // Navigation Bar transformations
+
+        window.onscroll = function() {scrollFunction()};
+
+        let topLeftLogo = document.getElementById("logo")
+        let navBar = document.getElementById("navbar")
+
+        function scrollFunction() {
+
+            if (document.documentElement.scrollTop < 80) {
+                navBar.style.paddingTop = "3em";
+                topLeftLogo.style.width = "150px";
+            } else if (document.documentElement.scrollTop > 160) {
+                navBar.style.paddingTop = "1em";
+                topLeftLogo.style.width = "100px";
+            } else {
+                let navbarHeight = 3 - (document.documentElement.scrollTop-80)/40
+                let logoWidth = Math.round(150 - 5*(document.documentElement.scrollTop-80)/8)
+
+                navBar.style.paddingTop = navbarHeight + "em";
+                topLeftLogo.style.width = logoWidth + "px";
+            }
+        }
+
+        topLeftLogo.addEventListener("mouseover", event => {
+            navBar.style.paddingTop = "3em";
+            topLeftLogo.style.width = "150px";
+        });
+
+
+        // Video play on scroll
+
+        var frameNumber = 0, // start video at frame 0
+        // lower numbers = faster playback
+        playbackConst = 1000, 
+        // get page height from video duration
+        // setHeight = document.getElementById("set-height"), 
+        // select video element         
+        vid = document.getElementById('v0'); 
+
+
+        // Use requestAnimationFrame for smooth playback
+        function scrollPlay(){  
+            var frameNumber  = window.pageYOffset/playbackConst;
+            vid.currentTime  = frameNumber;
+            window.requestAnimationFrame(scrollPlay);
+        }
+
+        window.requestAnimationFrame(scrollPlay);
+
+
+        const email = document.getElementById("launchlist-email");
+        const otherInfo = document.getElementById("launchlist-other-info")
+        // otherInfo.value = " "
+        const submitButton = document.getElementById("launchlist-submit")
+        submitButton.disabled = true;
+        email.addEventListener("keyup", submitButtonState);
+
+        function submitButtonState() {
+            if (document.getElementById("launchlist-email").checkValidity()) {
+                submitButton.disabled = false;
+            } else {
+                submitButton.disabled = true;
+            }
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
