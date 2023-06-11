@@ -83,10 +83,13 @@
 
     <script>
 
+        window.onscroll = function() {
+            scrollPlay();
+            scrollFunction();
+        };
+
 
         // Navigation Bar transformations
-
-        window.onscroll = function() {scrollFunction()};
 
         let topLeftLogo = document.getElementById("logo")
         let navBar = document.getElementById("navbar")
@@ -134,9 +137,7 @@
             vid.currentTime  = frameNumber;
         }
 
-        window.onscroll = function() {
-            scrollPlay();
-        };
+        
 
         // Activate submit button
         const email = document.getElementById("launchlist-email");
