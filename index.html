@@ -14,7 +14,7 @@
 <body>
     <div id="navbar">
         <div class="container">
-            <img id="logo" src="logo.png">
+            <img id="logo" src="assets/logo.png">
             <a href=#section-3>Shop now</a>
         </div>
     </div>
@@ -25,23 +25,23 @@
             <p>At Roofless Inc., we worked on making this camera digital. No film, no photoshop, just magic.</p>
         </div>
         <video playsinline muted autobuffer preload id="v0" tabindex="0">
-            <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src= "k4mspin.mp4"></source>
+            <source type='video/mp4;codecs="avc1.42E01E, mp4a.40.2"' src= "assets/k4mspin.mp4"></source>
         </video>
     </section>
     <section id="section-2">
 
         <div id="gif-container">
             <div class="inner-gif-container">
-                <img class="gif-class-static" src="img0.png">
-                <img class="gif-class" src="img0.gif">
+                <img class="gif-class-static" src="assets/img0.png">
+                <img class="gif-class" src="assets/img0.gif">
             </div>
             <div class="inner-gif-container">
-                <img class="gif-class-static" src="img1.png">
-                <img class="gif-class" src="img1.gif">
+                <img class="gif-class-static" src="assets/img1.png">
+                <img class="gif-class" src="assets/img1.gif">
             </div>
             <div class="inner-gif-container">
-                <img class="gif-class-static" src="img2.png">
-                <img class="gif-class" src="img2.gif">
+                <img class="gif-class-static" src="assets/img2.png">
+                <img class="gif-class" src="assets/img2.gif">
             </div>
 
             
@@ -57,6 +57,7 @@
         <div class="form-container">
             <div class="form-text">We are not live yet, still a work in progress. Enter your info below if you want to be the first to be notified when we're there!</div>
             <form class="launchlist-form" action="https://getlaunchlist.com/s/myIZjJ" method="POST">
+                <input type="hidden" name="_gotcha" />
                 
                 <div class="input-container">
                     <input id="launchlist-email" name="email" type="email" placeholder=" " required>
@@ -154,8 +155,6 @@
                 submitButton.disabled = true;
             }
         }
-
-
 
     </script>
     
