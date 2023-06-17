@@ -11,14 +11,26 @@
     -0.2px -0.2px 5.3px rgba(0, 0, 0, 0.202),
     4px 4px 17.9px rgba(0, 0, 0, 0.298),
     40px 40px 80px rgba(0, 0, 0, 0.5)
-  ;
-  scroll-behavior: smooth;
-
+    ;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
     background-color: var(--bg-color);
     font-family: var(--font-family-1);
+    overflow-x: hidden;
+    position: relative;
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        background-image: radial-gradient(
+            farthest-corner at 10px 10px,
+            var(--color-2) 0%,
+            var(--color-1) 100%
+        );
+    }
 }
 
 #navbar {
@@ -69,6 +81,13 @@ body {
     justify-content: center;
 }
 
+@media screen and (max-width: 500px) {
+
+    #section-1 {
+        flex-wrap: wrap-reverse;
+    }
+}
+
 #product-description {
     background-color: var(--color-1);
     width: 500px;
@@ -108,6 +127,13 @@ body {
     flex-grow: 1;
 }
 
+@media screen and (max-width: 500px) {
+
+    #v0 {
+        margin-bottom: 200px;
+    }
+}
+
 #section-2 {
     position: relative;
     min-height: 75vh;
@@ -123,12 +149,28 @@ body {
     flex-wrap: wrap;
 }
 
-.gif-class {
+@media screen and (max-width: 500px) {
+
+    #gif-container {
+        background-color: aqua;
+        justify-content: space-around;
+        height: 300vh;
+        scroll-snap-type: y proximity;
+        scroll-snap-stop: normal;    
+    }
+
+    .inner-gif-container {
+        background-color: #f35;
+        scroll-snap-align: center;
+    }
+}
+
+.gif-class, .gif-class-static {
     height: 400px;
+    margin: 30px 5px;
 }
 
 .gif-class-static {
-    height: 400px;
     position: absolute;
     box-shadow:
     0px -0.2px 5.3px var(--color-1),
@@ -137,17 +179,20 @@ body {
     transition: 0.3s ease;
 }
 
-.gif-class-static, .gif-class {
-    margin: 30px 5px;
+@media (hover: hover) {
+    .gif-class-static:hover {
+        opacity:0;
+    }
 }
 
-.gif-class-static:hover {
-    opacity:0;
+@media (hover: none) {
+    .gif-class-static {
+        opacity:0;
+    }
 }
 
 #section-3 {
     position: relative;
-    height: 100vh;
     margin-top: 50px;
     display: flex;
     flex-direction: column;
