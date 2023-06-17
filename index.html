@@ -31,8 +31,8 @@
     <section id="section-2">
 
         <div id="gif-container">
-            <div class="inner-gif-container">
-                <img class="gif-class-static" src="assets/img0.png">
+            <div id="gif1" class="inner-gif-container">
+                <img id="gif1-static" class="gif-class-static" src="assets/img0.png">
                 <img class="gif-class" src="assets/img0.gif">
             </div>
             <div class="inner-gif-container">
@@ -84,9 +84,15 @@
 
     <script>
 
+        var hoverNone = window.matchMedia("(hover: none)");
+
         window.onscroll = function() {
             scrollPlay();
             scrollFunction();
+            if (hoverNone.matches) {
+                console.log("ok")
+                animateGif();
+            }
         };
 
 
@@ -155,6 +161,30 @@
                 submitButton.disabled = true;
             }
         }
+
+
+        // Animate gif for mobile
+        
+
+        hoverNone.onscroll = function () {
+            if (hoverNone.matches) {
+                animateGif();
+            }
+        };
+
+        
+        function animateGif() {
+            document.querySelectorAll(".gif-class-static").forEach(img => {
+                var position = img.getBoundingClientRect();
+                if (position.top >= 0 && position.bottom <= window.innerHeight) {
+                    img.style.opacity = 0;
+                } else {
+                    img.style.opacity = 1;
+                }
+
+            });
+        }
+
 
     </script>
     

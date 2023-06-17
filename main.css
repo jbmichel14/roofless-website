@@ -12,18 +12,19 @@
     4px 4px 17.9px rgba(0, 0, 0, 0.298),
     40px 40px 80px rgba(0, 0, 0, 0.5)
     ;
-    scroll-behavior: smooth;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 body {
     background-color: var(--bg-color);
     font-family: var(--font-family-1);
     overflow-x: hidden;
-    position: relative;
 }
 
-@media screen and (max-width: 500px) {
+
+
+/* @media screen and (max-width: 500px) {
     body {
         background-image: radial-gradient(
             farthest-corner at 10px 10px,
@@ -31,7 +32,7 @@ body {
             var(--color-1) 100%
         );
     }
-}
+} */
 
 #navbar {
     padding: 3em 1em 1em 1em;
@@ -148,20 +149,9 @@ body {
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 @media screen and (max-width: 500px) {
-
     #gif-container {
-        background-color: aqua;
-        justify-content: space-around;
         height: 300vh;
-        scroll-snap-type: y proximity;
-        scroll-snap-stop: normal;    
-    }
-
-    .inner-gif-container {
-        background-color: #f35;
-        scroll-snap-align: center;
     }
 }
 
@@ -187,7 +177,7 @@ body {
 
 @media (hover: none) {
     .gif-class-static {
-        opacity:0;
+        opacity:1;
     }
 }
 
