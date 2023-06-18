@@ -292,6 +292,21 @@ input:focus {
     transition: all 0.5s ease;
 }
 
+@media screen and (max-width: 500px) {
+    .form-container .form-text {
+        font-size: 25px;
+        margin: 25px 25px 0;
+    }
+
+    /* .launchlist-form .input-container {
+        margin: 20px 20px 50px 20px;
+    } */
+
+    .submit-button {
+        min-height: 44px;
+    }
+}
+
 .submit-button:disabled {
     background-color: var(--color-2-accent);
     opacity: 0.5;
