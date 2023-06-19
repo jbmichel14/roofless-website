@@ -106,6 +106,8 @@
 
         var hoverNone = window.matchMedia("(hover: none)");
 
+        var mobile = window.matchMedia("screen and (max-width: 500px)");
+
         window.onscroll = function() {
             scrollPlay();
             scrollFunction();
@@ -123,26 +125,41 @@
 
         function scrollFunction() {
 
-            if (document.documentElement.scrollTop < 80) {
-                navBar.style.paddingTop = "3em";
-                topLeftLogo.style.width = "150px";
-                topRightCta.style.fontSize = "32px";
-            } else if (document.documentElement.scrollTop > 160) {
-                navBar.style.paddingTop = "1em";
-                topLeftLogo.style.width = "100px";
-                topRightCta.style.fontSize = "18px";
-            } else {
-                let navbarHeight = 3 - (document.documentElement.scrollTop-80)/40;
-                let logoWidth = Math.round(150 - 5*(document.documentElement.scrollTop-80)/8);
-                let ctaFontSize = Math.round(32 - 7*(document.documentElement.scrollTop-80)/40);
-                navBar.style.paddingTop = navbarHeight + "em";
-                topLeftLogo.style.width = logoWidth + "px";
-                topRightCta.style.fontSize = ctaFontSize + "px";
+
+            if (mobile.matches) {
+                if (document.documentElement.scrollTop < 80) {
+                    topLeftLogo.style.width = "96px";
+                    topRightCta.style.fontSize = "32px";
+                } else if (document.documentElement.scrollTop > 160) {
+                    topLeftLogo.style.width = "64px";
+                    topRightCta.style.fontSize = "18px";
+                } else {
+                    let logoWidth = Math.round(96 - 2*(document.documentElement.scrollTop-80)/5);
+                    let ctaFontSize = Math.round(32 - 7*(document.documentElement.scrollTop-80)/40);
+                    topLeftLogo.style.width = logoWidth + "px";
+                    topRightCta.style.fontSize = ctaFontSize + "px";
+                }
             }
+            else {
+                if (document.documentElement.scrollTop < 80) {
+                    topLeftLogo.style.width = "150px";
+                    topRightCta.style.fontSize = "32px";
+                } else if (document.documentElement.scrollTop > 160) {
+                    topLeftLogo.style.width = "100px";
+                    topRightCta.style.fontSize = "18px";
+                } else {
+                    let logoWidth = Math.round(150 - 5*(document.documentElement.scrollTop-80)/8);
+                    let ctaFontSize = Math.round(32 - 7*(document.documentElement.scrollTop-80)/40);
+                    topLeftLogo.style.width = logoWidth + "px";
+                    topRightCta.style.fontSize = ctaFontSize + "px";
+                }
+            }
+
+
+
         }
 
         topLeftLogo.addEventListener("mouseover", event => {
-            navBar.style.paddingTop = "3em";
             topLeftLogo.style.width = "150px";
             topRightCta.style.fontSize = "32px";
             console.log("jdsfhgbs");
@@ -154,7 +171,6 @@
         };
 
         topRightCta.addEventListener("mouseover", event => {
-            navBar.style.paddingTop = "3em";
             topLeftLogo.style.width = "150px";
             topRightCta.style.fontSize = "32px";
         });

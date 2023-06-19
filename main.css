@@ -55,7 +55,6 @@ body {
 } */
 
 #navbar {
-    padding: 3em 1em 1em 1em;
     transition: 0.2s;
     position: fixed;
     top: 0;
@@ -65,28 +64,41 @@ body {
 }
 
 #navbar .container {
+    /* background-color: aqua; */
     display: flex;
     flex-direction: horizontal;
     align-items: center;
     justify-content: space-between;
-    padding: 3px;
 }
 
 #navbar #navbar-logo {
     width: 150px;
     transition: 0.2s;
-    margin-left: 25px;
 }
+
+
 
 #navbar a {
     float: right;
     color: black;
     text-align: center;
-    padding: 12px;
+    padding-right: 20px;
     text-decoration: none;
     font-size: 32px; 
     font-weight: 300;
     transition: 0.2s;
+}
+
+@media screen and (max-width: 500px) {
+    #navbar #navbar-logo {
+        width: 96px;
+    }
+
+    #navbar a {
+        padding-right: 10px;
+    }
+
+    
 }
 
 #section-1 {
@@ -362,7 +374,7 @@ footer {
     margin-top: 1em;
 }
 
-footer img {
+.footer-logo-container img {
     height: 100px;
 }
 
@@ -380,21 +392,33 @@ small {
 
 @media screen and (max-width: 500px) {
 
+    footer {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
     .footer-container {
         flex-direction: row-reverse;
         align-items: start;
     }
 
-    footer img {
+    .footer-logo-container {
+        align-items: center;
+    }
+
+    .footer-logo-container img {
         padding-top: 10px;
-        height: 50px;
+        height: 35px;
+    }
+
+    #by-roofless {
+        font-size: 10px;
     }
 
     footer a, footer p {
         margin: 10px 0;
         font-size: larger;
     }
-
 
     small {
         margin-top: 150px;
