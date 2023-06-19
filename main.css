@@ -1,11 +1,27 @@
 :root{
-    --bg-color: rgb(250, 250, 250);
-    --color-1: rgb(255, 213, 234); /* 60% */
-    --color-2: rgb(210, 231, 243); /* 30% */
-    --color-2-accent: rgb(83, 184, 243);
-    --color-3: #000; /* 10% */
 
-    --font-family-1: "Cinzel", Helvetica, sans-serif;
+
+    --bg-color: #030320;
+    
+
+    /* Background gradient */
+    --bg-color-1: #9198e5;
+    --bg-color-2: #E0900A;
+    /* Actual Palette */
+    /* --color-1: rgb(114, 124, 226); */
+    --color-1: #9198e5;
+    --color-2: #E0900A;
+    --color-2-accent: rgb(114, 124, 226, 0.8);
+    --color-3: #000;
+
+    /* Texts and logos */
+    --text-color-1: #000; /* 10% */
+
+    --font-family-1: 'Rubik', 'Dongle', Helvetica, sans-serif;
+    --font-family-2: 'Dongle', sans-serif;
+    --font-family-3: 'Nunito', sans-serif;
+    --font-family-roofless: 'Noto Serif', serif;
+    
 
     --shadow-1:
     -0.2px -0.2px 5.3px rgba(0, 0, 0, 0.202),
@@ -17,7 +33,11 @@
 }
 
 body {
-    background-color: var(--bg-color);
+    /* background-color: var(--bg-color); */
+    /* background: rgb(3,3,32); */
+    background: 
+	radial-gradient(circle at 50% 105%, var(--bg-color-2), var(--bg-color-1));
+    /* linear-gradient(0deg, rgba(224,144,10,1), rgba(145,152,229,1)); */
     font-family: var(--font-family-1);
     overflow-x: hidden;
 }
@@ -52,12 +72,11 @@ body {
     padding: 3px;
 }
 
-#navbar #logo {
+#navbar #navbar-logo {
     width: 150px;
     transition: 0.2s;
+    margin-left: 25px;
 }
-
-
 
 #navbar a {
     float: right;
@@ -65,12 +84,12 @@ body {
     text-align: center;
     padding: 12px;
     text-decoration: none;
-    font-size: 18px; 
+    font-size: 32px; 
     font-weight: 300;
+    transition: 0.2s;
 }
 
 #section-1 {
-    /* background-color: #3498db; */
     position: relative;
     margin-top: 250px;
     padding: 0 4em 0;
@@ -143,7 +162,6 @@ body {
 }
 
 #gif-container {
-    /* background-color: aqua; */
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -162,11 +180,6 @@ body {
 
 .gif-class-static {
     position: absolute;
-    box-shadow:
-    0px -0.2px 5.3px var(--color-1),
-    0px 4.2px 17.9px var(--color-1),
-    0px 42px 80px var(--color-1);
-    transition: 0.3s ease;
 }
 
 @media (hover: hover) {
@@ -315,9 +328,7 @@ input:focus {
 .submit-button:enabled {
     background-color: var(--color-2-accent);
     box-shadow:
-        0px -0.2px 5.3px var(--color-2-accent),
-        0px 4.2px 17.9px var(--color-2-accent),
-        0px 42px 80px var(--color-2-accent);
+        0px 5.2px 33.3px var(--color-2-accent);
 }
 
 .submit-button:enabled:hover {
@@ -336,6 +347,19 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.footer-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+#by-roofless {
+    font-family: var(--font-family-roofless);
+    font-style: italic;
+    margin-top: 1em;
 }
 
 footer img {

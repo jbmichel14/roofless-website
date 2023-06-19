@@ -7,22 +7,22 @@
     <title>👀👀</title>
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Bokor&family=Cinzel:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">   
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Noto+Serif:ital,wght@0,500;1,500&family=Nunito:ital,wght@0,500;0,600;1,500;1,600&family=Rubik:wght@500&display=swap" rel="stylesheet">
     <script src="https://getlaunchlist.com/js/widget-diy.js" defer></script>
 </head>
 <body>
     <div id="navbar">
         <div class="container">
-            <img id="logo" src="assets/roofless-logo.png">
-            <a href=#section-3>Shop now</a>
+            <img id="navbar-logo" src="assets/k4-logo-spin.gif">
+            <a id="navbar-cta" href=#section-3>Get it!</a>
         </div>
     </div>
 
     <section id="section-1">
         <div id="product-description">
             <h1 class="title">K4MERA</h1>
-            <p>At Roofless Inc., we worked on making this camera digital. No film, no photoshop, just magic.</p>
+            <p>No film, no photoshop, just magic.</p>
         </div>
         <video autoplay muted autobuffer preload playsinline id="v0" tabindex="0">
             <source src="assets/k4mspin.mp4">
@@ -68,11 +68,11 @@
                 <div class="input-container">
                     <input id="launchlist-other-info" name="name" type="text" placeholder=" ">
                     <div class="underline"></div>
-                    <label for="launchlist-other-info">Anything else you want to add (instagram, twitter, ...)</label>
+                    <label for="launchlist-other-info">Anything else you want to add (instagram, youtube, ...)</label>
                 </div>
                 
                 <div class="input-container">
-                    <input id="launchlist-submit" class="submit-button" type="submit" value="Sign Up"></input>
+                    <input id="launchlist-submit" class="submit-button" type="submit" value="Join Waitlist"></input>
                 </div>
             </form>
         </div>
@@ -82,8 +82,11 @@
     <footer> 
         <div class="footer-container">
             
-            <img src="assets/k4-logo.svg" href="#">
-    
+
+            <div class="footer-logo-container">
+                <img src="assets/k4-logo.svg">
+                <p id="by-roofless">by roofless inc.</p>
+            </div>
             <div class="footer-links-container" style="display: block;">
                 <a href="http://instagram.com/jbmyo" target=”_blank”>Instagram</a>
                 <a onclick="investors()" style="cursor: pointer;">Investors</a>
@@ -107,7 +110,6 @@
             scrollPlay();
             scrollFunction();
             if (hoverNone.matches) {
-                console.log("ok")
                 animateGif();
             }
         };
@@ -115,29 +117,46 @@
 
         // Navigation Bar transformations
 
-        let topLeftLogo = document.getElementById("logo")
-        let navBar = document.getElementById("navbar")
+        let topLeftLogo = document.getElementById("navbar-logo");
+        let topRightCta = document.getElementById("navbar-cta");
+        let navBar = document.getElementById("navbar");
 
         function scrollFunction() {
 
             if (document.documentElement.scrollTop < 80) {
                 navBar.style.paddingTop = "3em";
                 topLeftLogo.style.width = "150px";
+                topRightCta.style.fontSize = "32px";
             } else if (document.documentElement.scrollTop > 160) {
                 navBar.style.paddingTop = "1em";
                 topLeftLogo.style.width = "100px";
+                topRightCta.style.fontSize = "18px";
             } else {
-                let navbarHeight = 3 - (document.documentElement.scrollTop-80)/40
-                let logoWidth = Math.round(150 - 5*(document.documentElement.scrollTop-80)/8)
-
+                let navbarHeight = 3 - (document.documentElement.scrollTop-80)/40;
+                let logoWidth = Math.round(150 - 5*(document.documentElement.scrollTop-80)/8);
+                let ctaFontSize = Math.round(32 - 7*(document.documentElement.scrollTop-80)/40);
                 navBar.style.paddingTop = navbarHeight + "em";
                 topLeftLogo.style.width = logoWidth + "px";
+                topRightCta.style.fontSize = ctaFontSize + "px";
             }
         }
 
         topLeftLogo.addEventListener("mouseover", event => {
             navBar.style.paddingTop = "3em";
             topLeftLogo.style.width = "150px";
+            topRightCta.style.fontSize = "32px";
+            console.log("jdsfhgbs");
+        });
+
+        topLeftLogo.onclick = function() {
+            topLeftLogo.src="assets/k4-logo-spin.gif";
+            console.log("sdrtiudrious");
+        };
+
+        topRightCta.addEventListener("mouseover", event => {
+            navBar.style.paddingTop = "3em";
+            topLeftLogo.style.width = "150px";
+            topRightCta.style.fontSize = "32px";
         });
 
 
@@ -202,8 +221,10 @@
             });
         }
 
+        
+
         function investors() {
-            alert("Nahhh we don't need yo broke ass");
+            alert("0x0915E417e43573A69c8d85833512BF7794864edb");
         }
 
 
