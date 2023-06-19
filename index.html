@@ -28,6 +28,7 @@
             <source src="assets/k4mspin.mp4">
             This browser does not support HTML5 video.
         </video>
+        <h1 class="mobile-title">K4MERA</h1>
     </section>
     <section id="section-2">
 
@@ -35,17 +36,18 @@
             <div id="gif1" class="inner-gif-container">
                 <img id="gif1-static" class="gif-class-static" src="assets/img0.png">
                 <img class="gif-class" src="assets/img0.gif">
+                <p class="spec">The first quadralens digital camera</p>
             </div>
             <div class="inner-gif-container">
                 <img class="gif-class-static" src="assets/img1.png">
                 <img class="gif-class" src="assets/img1.gif">
+                <p class="spec">Point and shoot</p>
             </div>
             <div class="inner-gif-container">
                 <img class="gif-class-static" src="assets/img2.png">
                 <img class="gif-class" src="assets/img2.gif">
+                <p class="spec">AI-powered editing</p>
             </div>
-
-            
         </div>
 
 
@@ -95,7 +97,7 @@
             </div>
         </div>
         
-        <small>&copy; Copyright 2023, Roofless</small> 
+        <small>&copy; Copyright 2023, Roofless Inc.</small> 
     
     
     </footer> 
@@ -230,9 +232,9 @@
             document.querySelectorAll(".gif-class-static").forEach(img => {
                 var position = img.getBoundingClientRect();
                 if (position.top >= 0 && position.bottom <= window.innerHeight) {
-                    img.style.opacity = 0;
+                    img.style.visibility = "hidden";
                 } else {
-                    img.style.opacity = 1;
+                    img.style.visibility = "visible";
                 }
             });
         }
