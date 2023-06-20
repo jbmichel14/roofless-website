@@ -22,8 +22,9 @@
     <section id="section-1">
         <div id="product-description">
             <h1 class="title">K4MERA</h1>
-            <p>No film, no photoshop, just magic.</p>
+            <p id="slogan">No film, no photoshop, just magic.</p>
         </div>
+        <div id="mobile-help"></div>
         <video autoplay muted autobuffer preload playsinline id="v0" tabindex="0">
             <source src="assets/k4mspin.mp4">
             This browser does not support HTML5 video.
@@ -36,7 +37,7 @@
             <div id="gif1" class="inner-gif-container">
                 <img id="gif1-static" class="gif-class-static" src="assets/img0.png">
                 <img class="gif-class" src="assets/img0.gif">
-                <p class="spec">The first quadralens digital camera</p>
+                <p class="spec">The first digital quadralens camera</p>
             </div>
             <div class="inner-gif-container">
                 <img class="gif-class-static" src="assets/img1.png">
@@ -164,12 +165,10 @@
         topLeftLogo.addEventListener("mouseover", event => {
             topLeftLogo.style.width = "150px";
             topRightCta.style.fontSize = "32px";
-            console.log("jdsfhgbs");
         });
 
         topLeftLogo.onclick = function() {
             topLeftLogo.src="assets/k4-logo-spin.gif";
-            console.log("sdrtiudrious");
         };
 
         topRightCta.addEventListener("mouseover", event => {
@@ -184,12 +183,14 @@
         // lower numbers = faster playback
         playbackConst = 1000,
         // get page height from video duration
-        // setHeight = document.getElementById("set-height"), 
+        setHeight = document.getElementById("section-1"), 
         // select video element         
         vid = document.getElementById('v0');
         vid.autoplay = false;
         vid.addEventListener('loadedmetadata', function() {
             vid.currentTime = 0;
+            let h = Math.floor(vid.duration * playbackConst)+vid.videoHeight
+            setHeight.style.height = h + "px";
         });
         
 
@@ -197,8 +198,19 @@
         function scrollPlay(){  
             var frameNumber  = window.pageYOffset/playbackConst;
             vid.currentTime  = frameNumber;
-        }
+            // if (vid.getBoundingClientRect().bottom <= setHeight.getBoundingClientRect().bottom) {
+            //     vid.style.transform = "translateY(" + window.pageYOffset + "px)";
+            // }
 
+            if (frameNumber < vid.duration) {
+                vid.style.transform = "translateY(" + window.pageYOffset + "px)";
+            }
+            
+
+            console.log("window y page offset: " + window.pageYOffset);
+            console.log("bottom of section-3: " + setHeight.getBoundingClientRect().bottom);
+        
+        }
         
 
         // Activate submit button
