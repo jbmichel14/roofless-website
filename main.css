@@ -231,8 +231,10 @@ body {
 }
 
 .inner-gif-container .spec {
+    text-align: center;
     font-size: 25px;
     margin: 150px 0 150px;
+    width: 90%;
 }
 
 @media screen and (max-width: 500px) {
@@ -371,7 +373,7 @@ input:focus {
     content: "";
     height: 100%;
     width: 100%;
-    background-color:  var(--color-2-accent);
+    background-color:  var(--color-2);
     transform: scaleX(0);
     transform-origin: center;
     transition: transform 0.2s ease;
@@ -384,7 +386,7 @@ input:focus {
 }
 
 .submit-button {
-    /* text-emphasis-color: var(--color-1); */
+    color: black;
     height: 50%;
     width: 50%;
     border-radius: 5px;
