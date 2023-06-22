@@ -25,8 +25,9 @@
             <p id="slogan">No film, no photoshop, just magic.</p>
         </div>
         <div id="mobile-help"></div>
-        <video autoplay muted autobuffer preload playsinline id="v0" tabindex="0">
-            <source src="assets/k4mspin.mp4">
+        <video muted autobuffer="autobuffer" preload="preload" playsinline id="v0" tabindex="0">
+            <!-- <source src="assets/k4mspin.webm" type="video/webm"> -->
+            <source src="assets/k4mspin.webm" type="video/webm">
             This browser does not support HTML5 video.
         </video>
         <h1 class="mobile-title">K4MERA</h1>
@@ -181,21 +182,26 @@
 
         var frameNumber = 0, // start video at frame 0
         // lower numbers = faster playback
-        playbackConst = 1000,
+        playbackConst = 300,
         // get page height from video duration
         setHeight = document.getElementById("section-1"), 
         // select video element         
         vid = document.getElementById('v0');
         vid.autoplay = false;
-        vid.addEventListener('loadedmetadata', function() {
-            vid.currentTime = 0;
-            let h = Math.floor(vid.duration * playbackConst)+vid.videoHeight
-            setHeight.style.height = h + "px";
-        });
+        // vid.addEventListener('loadedmetadata', function() {
+        //     vid.currentTime = 0;
+        //     let h = Math.floor(vid.duration * playbackConst)+vid.videoHeight
+        //     setHeight.style.height = h + "px";
+        //     console.log(vid.duration)
+        // });
+
+        let h = Math.floor(4 * playbackConst);
+        setHeight.style.height = h + "px";
         
 
         // Use requestAnimationFrame for smooth playback
         function scrollPlay(){  
+            
             var frameNumber  = window.pageYOffset/playbackConst;
             vid.currentTime  = frameNumber;
             // if (vid.getBoundingClientRect().bottom <= setHeight.getBoundingClientRect().bottom) {
@@ -205,10 +211,6 @@
             if (frameNumber < vid.duration) {
                 vid.style.transform = "translateY(" + window.pageYOffset + "px)";
             }
-            
-
-            console.log("window y page offset: " + window.pageYOffset);
-            console.log("bottom of section-3: " + setHeight.getBoundingClientRect().bottom);
         
         }
         
@@ -254,7 +256,7 @@
         
 
         function investors() {
-            alert("0x0915E417e43573A69c8d85833512BF7794864edb");
+            alert("ETH: 0x0915E417e43573A69c8d85833512BF7794864edb");
         }
 
 
