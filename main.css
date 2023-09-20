@@ -16,10 +16,13 @@
     /* Texts and logos */
     --text-color-1: #000; /* 10% */
 
-    --font-family-1: 'Rubik', 'Dongle', Helvetica, sans-serif;
+    /* --font-family-1: 'Rubik', 'Dongle', Helvetica, sans-serif; */
     /* --font-family-2: 'Dongle', sans-serif;
     --font-family-3: 'Nunito', sans-serif; */
     --font-family-roofless: 'Noto Serif', serif;
+    --font-family-1: "aileron", sans-serif;
+    --font-weight: 700;
+    --font-style: normal;
     
 
     --shadow-1:
@@ -34,10 +37,18 @@
 body {
     /* background-color: var(--bg-color); */
     /* background: rgb(3,3,32); */
-    background: 
-	radial-gradient(circle at 50% 105%, var(--bg-color-2), var(--bg-color-1));
+    /* background: 
+	radial-gradient(circle at 50% 105%, var(--bg-color-2), var(--bg-color-1)); */
     /* linear-gradient(0deg, rgba(224,144,10,1), rgba(145,152,229,1)); */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+    background-image: url('assets/IMG_3688.png');
+    background-size: cover; /* Cover the entire background area */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
     font-family: var(--font-family-1);
+    font-weight: var(--font-weight);
+    font-style: var(--font-style);
     overflow-x: hidden;
 }
 
@@ -115,7 +126,7 @@ body {
 
 
 #product-description {
-    background-color: var(--color-1);
+    /* background-color: var(--color-1); */
     width: 500px;
     padding: 3em;
     max-width: 100vw;
@@ -125,10 +136,10 @@ body {
     flex-direction: column;
     align-items: end;
     border-radius: 87% 13% 88% 12% / 53% 40% 60% 47%;
-    box-shadow:
+    /* box-shadow:
         -0.2px -0.2px 5.3px var(--color-1),
         4px 4px 17.9px var(--color-1),
-        40px 40px 80px var(--color-1);
+        40px 40px 80px var(--color-1); */
     z-index: 10;
     color: var(--bg-color);
     margin-bottom: 150px;
@@ -138,11 +149,19 @@ body {
     font-weight: 700;
     font-size: 60px;
     margin: 0;
+    text-shadow:
+        3.4px 2.1px 2.7px rgba(255, 255, 255, 0.074),
+        8.7px 5.4px 6.9px rgba(255, 255, 255, 0.106),
+        17.7px 11px 14.2px rgba(255, 255, 255, 0.134),
+        36.5px 22.6px 29.2px rgba(255, 255, 255, 0.166),
+        100px 62px 80px rgba(255, 255, 255, 0.24)
+    ;
+  
 }
 
 #product-description p {
     display: block;
-    font-weight: 300;
+    font-weight: 700;
     font-size: 25px;
 }
 
@@ -174,8 +193,6 @@ body {
     }
 
 }
-
-
 
 
 #section-2 {
@@ -259,16 +276,16 @@ body {
 }
 
 .form-container {
-    background-color: var(--color-2);
+    /* background-color: var(--color-2); */
     height: 500px;
     width: 700px;
     padding: 6em;
     max-width: 100vw;
     border-radius: 43% 57% 50% 50% / 39% 76% 24% 61% ;
-    box-shadow:
+    /* box-shadow:
         -0.2px -0.2px 5.3px var(--color-2),
         4px 4px 17.9px var(--color-2),
-        40px 40px 80px var(--color-2);
+        40px 40px 80px var(--color-2); */
 }
 
 .form-container .form-text {
