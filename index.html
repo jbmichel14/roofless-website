@@ -8,59 +8,23 @@
     <link rel="stylesheet" href="main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@400;700&family=Noto+Serif:ital,wght@0,500;1,500&family=Nunito:ital,wght@0,500;0,600;1,500;1,600&family=Rubik:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.typekit.net/haz2nkj.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://getlaunchlist.com/js/widget-diy.js" defer></script>
 </head>
 <body>
     <div id="navbar">
         <div class="container">
             <img id="navbar-logo" src="assets/k4-logo-spin.gif">
-            <a id="navbar-cta" href=#section-3>Get it!</a>
+            <a class="fa fa-instagram" href="http://instagram.com/k4.mera"  target=”_blank”></a>
         </div>
     </div>
 
-    <section id="section-1">
-        <div id="product-description">
-            <h1 class="title">K4MERA</h1>
-            <p id="slogan">No film, no photoshop, just magic.</p>
-        </div>
-        <div id="mobile-help"></div>
-        <video muted autobuffer="autobuffer" preload="preload" playsinline id="v0" tabindex="0">
-            <!-- <source src="assets/k4mspin.webm" type="video/webm"> -->
-            <source src="assets/k4mspin.webm" type="video/webm">
-            This browser does not support HTML5 video.
-        </video>
-        <h1 class="mobile-title">K4MERA</h1>
-    </section>
-    <section id="section-2">
-
-        <div id="gif-container">
-            <div id="gif1" class="inner-gif-container">
-                <img id="gif1-static" class="gif-class-static" src="assets/img0.png">
-                <img class="gif-class" src="assets/img0.gif">
-                <p class="spec">The first digital quadralens camera</p>
-            </div>
-            <div class="inner-gif-container">
-                <img class="gif-class-static" src="assets/img1.png">
-                <img class="gif-class" src="assets/img1.gif">
-                <p class="spec">Point and shoot</p>
-            </div>
-            <div class="inner-gif-container">
-                <img class="gif-class-static" src="assets/img2.png">
-                <img class="gif-class" src="assets/img2.gif">
-                <p class="spec">AI-powered editing</p>
-            </div>
-        </div>
-
-
-    </section>
-
-    <section id="section-3">
-
-        
-
+    <section>
         <div class="form-container">
-            <div class="form-text">We are not live yet, still a work in progress. Enter your info below if you want to be the first to be notified when we're there!</div>
+            <div class="form-text">The first digital wiggle cam is called</div>
+            <div id="k4mera">K4MERA</div>
+            <div class="form-text">Be the first to get it!</div>
             <form class="launchlist-form" action="https://getlaunchlist.com/s/myIZjJ" method="POST">
                 <input type="hidden" name="_gotcha" />
                 
@@ -84,7 +48,7 @@
     </section>
 
     <footer> 
-        <div class="footer-container">
+        <!-- <div class="footer-container">
             
 
             <div class="footer-logo-container">
@@ -92,14 +56,14 @@
                 <p id="by-roofless">by roofless inc.</p>
             </div>
             <div class="footer-links-container" style="display: block;">
-                <a href="http://instagram.com/jbmyo" target=”_blank”>Instagram</a>
+                <a href="http://instagram.com/k4.mera" target=”_blank”>Instagram</a>
                 <a onclick="investors()" style="cursor: pointer;">Investors</a>
                 <a href="privacy.html">Privacy</a>
                 <a href="terms.html">Terms</a>
             </div>
-        </div>
+        </div> -->
         
-        <small>&copy; Copyright 2023, Roofless Inc.</small> 
+        <small>&copy; Copyright 2023, K4MERA.WORLD</small> 
     
     
     </footer> 
@@ -108,111 +72,16 @@
 
     <script>
 
-        var hoverNone = window.matchMedia("(hover: none)");
-
-        var mobile = window.matchMedia("screen and (max-width: 500px)");
-
-        window.onscroll = function() {
-            scrollPlay();
-            scrollFunction();
-            if (hoverNone.matches) {
-                animateGif();
-            }
-        };
-
 
         // Navigation Bar transformations
 
         let topLeftLogo = document.getElementById("navbar-logo");
-        let topRightCta = document.getElementById("navbar-cta");
-        let navBar = document.getElementById("navbar");
-
-        function scrollFunction() {
-
-
-            if (mobile.matches) {
-                if (document.documentElement.scrollTop < 80) {
-                    topLeftLogo.style.width = "96px";
-                    topRightCta.style.fontSize = "32px";
-                } else if (document.documentElement.scrollTop > 160) {
-                    topLeftLogo.style.width = "64px";
-                    topRightCta.style.fontSize = "18px";
-                } else {
-                    let logoWidth = Math.round(96 - 2*(document.documentElement.scrollTop-80)/5);
-                    let ctaFontSize = Math.round(32 - 7*(document.documentElement.scrollTop-80)/40);
-                    topLeftLogo.style.width = logoWidth + "px";
-                    topRightCta.style.fontSize = ctaFontSize + "px";
-                }
-            }
-            else {
-                if (document.documentElement.scrollTop < 80) {
-                    topLeftLogo.style.width = "150px";
-                    topRightCta.style.fontSize = "32px";
-                } else if (document.documentElement.scrollTop > 160) {
-                    topLeftLogo.style.width = "100px";
-                    topRightCta.style.fontSize = "18px";
-                } else {
-                    let logoWidth = Math.round(150 - 5*(document.documentElement.scrollTop-80)/8);
-                    let ctaFontSize = Math.round(32 - 7*(document.documentElement.scrollTop-80)/40);
-                    topLeftLogo.style.width = logoWidth + "px";
-                    topRightCta.style.fontSize = ctaFontSize + "px";
-                }
-            }
-
-
-
-        }
-
-        topLeftLogo.addEventListener("mouseover", event => {
-            topLeftLogo.style.width = "150px";
-            topRightCta.style.fontSize = "32px";
-        });
 
         topLeftLogo.onclick = function() {
             topLeftLogo.src="assets/k4-logo-spin.gif";
         };
-
-        topRightCta.addEventListener("mouseover", event => {
-            topLeftLogo.style.width = "150px";
-            topRightCta.style.fontSize = "32px";
-        });
-
-
-        // Video play on scroll
-
-        var frameNumber = 0, // start video at frame 0
-        // lower numbers = faster playback
-        playbackConst = 300,
-        // get page height from video duration
-        setHeight = document.getElementById("section-1"), 
-        // select video element         
-        vid = document.getElementById('v0');
-        vid.autoplay = false;
-        // vid.addEventListener('loadedmetadata', function() {
-        //     vid.currentTime = 0;
-        //     let h = Math.floor(vid.duration * playbackConst)+vid.videoHeight
-        //     setHeight.style.height = h + "px";
-        //     console.log(vid.duration)
-        // });
-
-        let h = Math.floor(4 * playbackConst);
-        setHeight.style.height = h + "px";
         
 
-        // Use requestAnimationFrame for smooth playback
-        function scrollPlay(){  
-            
-            var frameNumber  = window.pageYOffset/playbackConst;
-            vid.currentTime  = frameNumber;
-            // if (vid.getBoundingClientRect().bottom <= setHeight.getBoundingClientRect().bottom) {
-            //     vid.style.transform = "translateY(" + window.pageYOffset + "px)";
-            // }
-
-            if (frameNumber < vid.duration) {
-                vid.style.transform = "translateY(" + window.pageYOffset + "px)";
-            }
-        
-        }
         
 
         // Activate submit button
@@ -229,34 +98,6 @@
             } else {
                 submitButton.disabled = true;
             }
-        }
-
-
-        // Animate gif for mobile
-        
-
-        hoverNone.onscroll = function () {
-            if (hoverNone.matches) {
-                animateGif();
-            }
-        };
-
-        
-        function animateGif() {
-            document.querySelectorAll(".gif-class-static").forEach(img => {
-                var position = img.getBoundingClientRect();
-                if (position.top >= 0 && position.bottom <= window.innerHeight) {
-                    img.style.visibility = "hidden";
-                } else {
-                    img.style.visibility = "visible";
-                }
-            });
-        }
-
-        
-
-        function investors() {
-            alert("ETH: 0x0915E417e43573A69c8d85833512BF7794864edb");
         }
 
 
