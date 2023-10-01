@@ -60,12 +60,14 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+
+
     #navbar #navbar-logo {
-        width: 96px;
+        width: 64px;
     }
 
     #navbar a {
-        padding-right: 10px;
+        width: 64px;
     }
 
     
@@ -207,11 +209,13 @@ input:focus {
 @media screen and (max-width: 500px) {
     .form-container .form-text {
         font-size: 25px;
+        padding-top: 0;
     }
-
-    /* .launchlist-form .input-container {
-        margin: 20px 20px 50px 20px;
-    } */
+    .form-container {
+        align-items: start;
+        padding: 40px;
+        
+    }
 
     .submit-button {
         min-height: 44px;
@@ -241,39 +245,4 @@ footer {
 
 small {
     padding-bottom: 4px;
-}
-
-@media screen and (max-width: 500px) {
-
-    footer {
-        padding-right: 0;
-        padding-left: 0;
-    }
-
-    .footer-container {
-        flex-direction: row-reverse;
-        align-items: start;
-    }
-
-    .footer-logo-container {
-        align-items: center;
-    }
-
-    .footer-logo-container img {
-        padding-top: 10px;
-        height: 35px;
-    }
-
-    #by-roofless {
-        font-size: 10px;
-    }
-
-    footer a, footer p {
-        margin: 10px 0;
-        font-size: larger;
-    }
-
-    small {
-        margin-top: 150px;
-    }
 }
